@@ -1,0 +1,100 @@
+
+Versão 0.7 (2012-01-02)
+================
+Atualizações gerais
+- Código totalmente re-escrito.
+
+Versão 0.6
+================
+Atualizações gerais
+- Substituição de funções que foram depreciadas na versão 5.3.0 do PHP e serão removidas da versão 6.0.
+- Remodelagem da classe principal (ver detalhes sobre as APIs em na seção Aprendendo').
+- Agora os Módulos não resolvem nenhuma marcação. para chamar um Modulo dentro de outro, deve-se usar métodos da Classe Coupé.
+- Como Módulos NAO chamam mais Blocos e outros Módulos através de marcações, houve um aumento considerável na performance.
+- Criada uma nova classe Coupé responsável por exibir uma matriz de dados formatados chamada Coupé Repeater.
+- Criada uma nova classe Coupé chamada Cache somente com os métodos de cache próprios do PHP COUPE.
+- Agora o suporte a idiomas do PHP COUPÉ também abrange seu cache (antes o cache só armazenava dados de um único idioma).
+- Adiciona o recurso de spaceless que remove o excesso de espaços em branco das paginas geradas para que carregarem mais rápido.
+- Adicionado recurso de alto completar URLs. se apenas um trecho da url for digitado, o sistema se encarregar de completa-la.
+- Adicionado o método getList() na classe Coupé Content', agora na versão 0.1b, para listar os conteúdos do projetos.
+- Refeito o método listPerExtension() da classe Coupé File (agora na versão 0.1a) com a capacidade de remover as extensões.
+- Adicionado o método export() a classe Coupé, capaz de exportar todo conteúdo do site para o formato HTML.
+- Alteração no arquivo .htaccess para que o PHP COUPE funcione com URLs amigáveis em servidores PHP FastCGI.
+- Melhoria da lógica de rota do framework.
+- Correção de um bug que indicava o conteúdo como inexistente se o arquivo estivesse em branco.
+- Adicionado um método para importar arquivos de funções para serem usadas dentro dos módulos.
+- Alterado o método que carrega os módulos. Assim, carregamos automaticamente um arquivo de função que tiver o mesmo nome do modulo.
+- As páginas de erro são filhas do pai error (ex.: error.404). assim é possível definir um modelo somente para os erros.
+- Código fonte totalmente re-escrito sendo seu núcleo em formato MVC.
+- Adicionado o conceito de rotas e mapas no tratamento das URLs.
+- Removida a configuração START_CONTENT'. o conteúdo inicial agora é controlado por um mapa em mappers.cfg.php.
+- Removida a configuração BASE_PATH'. Não é mais necessário especificar a URL do projeto. isso é feito de forma automatica.
+
+Versão 0.5
+================
+Atualizações gerais
+- Adicionado novo recurso para manipular informações que são exibidas usando as marcações [% %] (Obrigado Fernado Alonso!).
+- Método makeList() da classe Coupé Database foi totalmente refeito. devido as alterações, essa classe esta na versão 0.2.
+- Correções na classe Coupé Content', agora na versão 0.1a.
+- A classe Coupé Form foi praticamente refeita. agora na versão 0.2, foram adicionados novos métodos.
+- Mudança no método query() da classe Coupé Form que agora pode executar o comando SQL gerado (ao invés de só retorna-lo).
+- Correções importantes no método add() e get() da classe Coupé Session', agora na versão 0.1a.
+- Correções e criação do método randomic() na classe Coupé Security que agora esta na versão 0.2.
+- Várias outras correções e otimizações.
+
+Configurações
+- Adicionado o parâmetro DATE_FORMAT as configurações do PHP Coupé. Assim defini-se em um só lugar o formato de data de todo projeto.
+
+Versão 0.4a
+================
+Atualizações gerais
+- Correção no tratamento de URLs.
+
+Conteúdo
+- Pequena alteração na classe Content devido a primeira correção.
+
+Versão 0.4
+================
+Atualizações gerais
+- Adicionada capacidade de salvar as paginas geradas em cache. módulos entre [! !] terão tem seus resultados salvos.
+- Adicionado suporte a idiomas. agora seu projeto pode ser traduzido para outras lingüas facilmente.
+- Melhorias na segurança, no código e vários bugs corrigidos.
+- Inclusão de Classes que são um conjunto de operações prontas para serem utilizadas e agilizar a programação.
+- Sim, agora temos URLs amigáveis!
+- Incluída a capacidade de armazenar os eventos em log
+- Sistema de debug interno que revela dados sobre os aplicativos e tempo de execução em consultas ao banco de dados.
+- Por motivos de padronização, a marcação para invocar um bloco de conteúdo passou de <[ ]> para [# #].
+
+Licença de uso
+- Alterada a licença de uso do programa para Creative Commons by-nd <http://creativecommons.org/licenses/by-nd/2.5/br/>.
+
+Versão 0.3a
+================
+Atualizações gerais
+- Adionada a API a função getTitle que pega o título do documento solicitado. o título pode estar entre as tags h1, h2, h3, etc.
+- Incluindo no arquivo de configuração a possibilidade de definir qual será o conteúdo inicial do seu site. basta indicar seu nome.
+- Agora é possível criar módulos usando as tags <?php e ?>'. recomendável utilizar para ativar o highlight dos editores e por segurança.
+
+Versão 0.3
+================
+Atualizações gerais
+- Adicionada a possibilidade de usar blocos de conteúdo que são armazenados na pasta blocks e invocados via <[nome_bloco]>.
+- Blocos de conteúdo são capazes de chamar outros blocos e módulos. Se o bloco chamado for o mesmo que chama, por enquanto, entra em loop.
+- Inclusão da função getQuery que permite armazenar as consultas ao banco em uma matriz.
+
+Versão 0.2
+================
+Atualizações gerais
+- Adicionada a função getQuery a API. essa função recebe uma String com uma query e retorna um Array com o resultado da consulta.
+- Agora a função getContent retorna o conteúdo do arquivo 404.cnt.php ao invés de FALSE para a função getModule'.
+
+Configurações
+- Adicionado o parâmetro $banco['use'] nas configurações para especificar se o programa deve, ou não, usar banco de dados.
+
+Banco de dados
+- Agora a conexão com o banco de dados é feita e fechada automaticamente quando estiver usando o banco de dados "$banco['use']=1".
+
+Versão 0.1
+================
+Atualizações gerais
+- Versão inicial. Nenhuma atualização :)
